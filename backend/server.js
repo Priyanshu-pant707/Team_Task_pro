@@ -1,11 +1,11 @@
 const express = require('express');
 
 const app = express();
+require('dotenv').config();
 
 const connectDb = require('./config/db');
 
 connectDb();
-
 
 app.use(express.json());
 
@@ -27,6 +27,6 @@ app.get('/', function (req, res) {
 })
 
 
-app.listen(5000, function () {
-    console.log('Server is running on port 3000');
+app.listen(process.env.PORT, function () {
+    console.log('Server is running ....');
 })
